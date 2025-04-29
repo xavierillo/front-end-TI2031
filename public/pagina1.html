@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>EcoFood</title>
+        <link rel="icon" href="./asset/img/favicon.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <!-- <link href="./css/styles.css" rel="stylesheet" > -->
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1 class="text-center">Bienvenido a EcoFood Community</h1>
+            <p class="lead text-center">Únete a la reducción del desperdicio de alimentos.</p>
+          
+            <div id="fraseMotivadora" class="alert alert-success text-center mt-4">
+                Aquí se cargará dinámicamente una frase 
+            </div>
+          
+            <div class="d-flex justify-content-center gap-3 mt-5">
+              <button class="btn btn-success" onclick="redirigirRegistro()">Registrarse</button>
+              <button class="btn btn-primary" onclick="redirigirLogin()">Iniciar Sesión</button>
+            </div>
+          </div>
+          
+          <script>
+            const frases = [
+                "¡Reduce, Reutiliza y Recicla alimentos!",
+                "Cada grano de comida cuenta para un mundo mejor.",
+                "Compartir alimentos es compartir esperanza."
+                ];
+
+                function mostrarFraseMotivadora() {
+                const fraseElegida = frases[Math.floor(Math.random() * frases.length)];
+                document.getElementById("fraseMotivadora").textContent = fraseElegida;
+                }
+
+                function redirigirRegistro() {
+                window.location.href = "registro.html";
+                }
+
+                function redirigirLogin() {
+                window.location.href = "login.html";
+                }
+
+                // Ejecutar automáticamente al cargar
+                window.onload = mostrarFraseMotivadora;
+          </script>
+            
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+            </body>
+        </html>
